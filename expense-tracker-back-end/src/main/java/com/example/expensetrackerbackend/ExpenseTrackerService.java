@@ -7,10 +7,8 @@ import java.util.List;
 
 @Service
 public class ExpenseTrackerService {
-
-
     @Autowired
-    ExpenseTrackerRep expenseTrackerRep;
+  ExpenseTrackerRep expenseTrackerRep;
 
 
     public Expense addExpense(Expense expense) {
@@ -20,9 +18,9 @@ public class ExpenseTrackerService {
     }
 
 
-        public List<Expense> getAllExpenses() {
+        public  List<Expense> getAllExpenses() {
 
-        return expenseTrackerRep.getAllData();
+        return expenseTrackerRep.getAllExpenses();
 
         }
 

@@ -10,10 +10,30 @@ public class Expense {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
 
+
+    private int id;
     private String date;
-    private double amount;
+    private String picture;
+    private double spent;
 
     private String category;
+
+    public Expense(String date, double spent, String category, int id, String picture) {
+        this.date = date;
+        this.spent = spent;
+        this.category = category;
+        this.id = id;
+        this.picture = picture;
+    }
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
+    }
+
 
     public int getId() {
         return id;
@@ -23,7 +43,7 @@ public class Expense {
         this.id = id;
     }
 
-    private int id;
+
     public String getDate() {
         return date;
     }
@@ -32,12 +52,12 @@ public class Expense {
         this.date = date;
     }
 
-    public double getAmount() {
-        return amount;
+    public double getSpent() {
+        return spent;
     }
 
-    public void setAmount(double amount) {
-        this.amount = amount;
+    public void setSpent(double spent) {
+        this.spent= spent;
     }
 
     public String getCategory() {
@@ -47,18 +67,6 @@ public class Expense {
     public void setCategory(String category) {
         this.category = category;
     }
-
-    public Expense(String date, double amount, String category, int id) {
-        this.date = date;
-        this.amount = amount;
-        this.category = category;
-        this.id = id;
-    }
-
-
-
-
-
 
 
 
