@@ -7,8 +7,11 @@ import java.util.List;
 
 @Service
 public class ExpenseTrackerService {
+    private final ExpenseTrackerRep expenseTrackerRep;
     @Autowired
-  ExpenseTrackerRep expenseTrackerRep;
+    public ExpenseTrackerService(ExpenseTrackerRep expenseTrackerRep) {
+        this.expenseTrackerRep = expenseTrackerRep;
+    }
 
 
     public Expense addExpense(Expense expense) {

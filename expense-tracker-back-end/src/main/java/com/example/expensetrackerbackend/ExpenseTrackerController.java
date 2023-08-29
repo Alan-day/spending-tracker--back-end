@@ -12,9 +12,12 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:3000")
 public class ExpenseTrackerController {
 
+    private final ExpenseTrackerService expenseTrackerService;
     @Autowired
+    public ExpenseTrackerController(ExpenseTrackerService expenseTrackerService) {
+        this.expenseTrackerService = expenseTrackerService;
+    }
 
-    ExpenseTrackerService expenseTrackerService;
 
     @PostMapping("/addExpense")
     public ResponseEntity<Expense> createDrink(@RequestBody Expense expense) {
@@ -28,13 +31,6 @@ public class ExpenseTrackerController {
         return ResponseEntity.status(HttpStatus.OK).body(expenseTrackerService.getAllExpenses());
     }
 
-//    @GetMapping("/error")
-//
-//    public ResponseEntity<String> getError() {
-//
-//
-//        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("not working");
-//    }
 
 
 
